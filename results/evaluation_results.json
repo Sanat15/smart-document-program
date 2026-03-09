@@ -1,0 +1,1076 @@
+{
+  "timestamp": "2026-03-09T12:08:23.556345",
+  "total_questions": 110,
+  "relevance_threshold": 0.5,
+  "metrics": {
+    "recall_at_1": 0.9,
+    "recall_at_3": 0.9,
+    "recall_at_5": 0.9,
+    "top1_accuracy": 0.9,
+    "top3_accuracy": 0.9,
+    "mrr": 0.9,
+    "ndcg_at_5": 0.9,
+    "paraphrase_robustness": 0.7333333333333333,
+    "false_positive_rate": 0.1,
+    "hallucination_rate": 0.1,
+    "avg_embedding_ms": 0,
+    "avg_retrieval_ms": 0,
+    "avg_reranking_ms": 0,
+    "avg_total_ms": 2097.40826216611,
+    "p50_total_ms": 2043.9238548278809,
+    "p95_total_ms": 2367.1023845672607,
+    "p99_total_ms": 3120.2330589294434,
+    "cache_hit_rate": 1.0,
+    "cached_latency_ms": 2097.40826216611,
+    "uncached_latency_ms": 0,
+    "cache_improvement_pct": 0
+  },
+  "section_breakdown": {
+    "A": {
+      "name": "222 Rajpur, Dehradun",
+      "total": 25,
+      "accuracy": 0.92,
+      "avg_latency_ms": 2156.384677886963
+    },
+    "B": {
+      "name": "Max Towers, Noida",
+      "total": 18,
+      "accuracy": 1.0,
+      "avg_latency_ms": 2042.0916742748684
+    },
+    "C": {
+      "name": "Max House, Okhla",
+      "total": 13,
+      "accuracy": 1.0,
+      "avg_latency_ms": 2039.9604577284592
+    },
+    "D": {
+      "name": "Cross-Property Comparison",
+      "total": 15,
+      "accuracy": 1.0,
+      "avg_latency_ms": 2212.5303268432617
+    },
+    "E": {
+      "name": "Real-World Client Simulation",
+      "total": 9,
+      "accuracy": 1.0,
+      "avg_latency_ms": 2072.3762777116563
+    },
+    "F": {
+      "name": "Paraphrase Robustness",
+      "total": 15,
+      "accuracy": 0.7333333333333333,
+      "avg_latency_ms": 2045.360819498698
+    },
+    "G": {
+      "name": "Negative/Adversarial Questions",
+      "total": 10,
+      "accuracy": 0,
+      "avg_latency_ms": 2067.264699935913
+    },
+    "H": {
+      "name": "Ambiguous/Clarification Test",
+      "total": 5,
+      "accuracy": 0.2,
+      "avg_latency_ms": 2067.1510219573975
+    }
+  },
+  "observations": [
+    "\u2705 Recall@1 (90.0%) meets target (\u226575%)",
+    "\u2705 Recall@3 (90.0%) meets target (\u226590%)",
+    "\u26a0\ufe0f False Positive Rate (10.0%) is high",
+    "\u26a0\ufe0f P95 Latency (2367ms) above target (<2000ms)"
+  ],
+  "results": [
+    {
+      "query_id": "A1",
+      "query": "For 222 Rajpur, Dehradun, how many total residences are planned and over how many acres is the project spread?",
+      "section": "222 Rajpur, Dehradun",
+      "category": "general",
+      "top_score": 0.7368,
+      "latency_ms": 2040.2541160583496,
+      "has_relevant": true
+    },
+    {
+      "query_id": "A2",
+      "query": "At 222 Rajpur, what types of residences are available?",
+      "section": "222 Rajpur, Dehradun",
+      "category": "general",
+      "top_score": 0.7605,
+      "latency_ms": 2045.968770980835,
+      "has_relevant": true
+    },
+    {
+      "query_id": "A3",
+      "query": "Is 222 Rajpur adjacent to any forest area? If yes, which one?",
+      "section": "222 Rajpur, Dehradun",
+      "category": "general",
+      "top_score": 0.7567,
+      "latency_ms": 2022.608757019043,
+      "has_relevant": true
+    },
+    {
+      "query_id": "A4",
+      "query": "What are the views offered from residences at 222 Rajpur, Dehradun?",
+      "section": "222 Rajpur, Dehradun",
+      "category": "general",
+      "top_score": 0.7789,
+      "latency_ms": 2030.1640033721924,
+      "has_relevant": true
+    },
+    {
+      "query_id": "A5",
+      "query": "How far is Jolly Grant Airport from 222 Rajpur, Dehradun?",
+      "section": "222 Rajpur, Dehradun",
+      "category": "location",
+      "top_score": 0.6125,
+      "latency_ms": 2124.8717308044434,
+      "has_relevant": true
+    },
+    {
+      "query_id": "A6",
+      "query": "What is the distance between 222 Rajpur and The Doon School?",
+      "section": "222 Rajpur, Dehradun",
+      "category": "location",
+      "top_score": 0.6532,
+      "latency_ms": 2039.8917198181152,
+      "has_relevant": true
+    },
+    {
+      "query_id": "A7",
+      "query": "How long does it take to reach Pacific Mall from 222 Rajpur?",
+      "section": "222 Rajpur, Dehradun",
+      "category": "location",
+      "top_score": 0.4499,
+      "latency_ms": 2038.1278991699219,
+      "has_relevant": false
+    },
+    {
+      "query_id": "A8",
+      "query": "Is 222 Rajpur close to Max Super Specialty Hospital?",
+      "section": "222 Rajpur, Dehradun",
+      "category": "location",
+      "top_score": 0.6837,
+      "latency_ms": 2035.2797508239746,
+      "has_relevant": true
+    },
+    {
+      "query_id": "A9",
+      "query": "How many Townhouse units are available at 222 Rajpur?",
+      "section": "222 Rajpur, Dehradun",
+      "category": "townhouse",
+      "top_score": 0.6465,
+      "latency_ms": 2018.2709693908691,
+      "has_relevant": true
+    },
+    {
+      "query_id": "A10",
+      "query": "What is the built-up area and carpet area of a Townhouse at 222 Rajpur?",
+      "section": "222 Rajpur, Dehradun",
+      "category": "townhouse",
+      "top_score": 0.6862,
+      "latency_ms": 2033.8454246520996,
+      "has_relevant": true
+    },
+    {
+      "query_id": "A11",
+      "query": "Does the Townhouse at 222 Rajpur include a sky court?",
+      "section": "222 Rajpur, Dehradun",
+      "category": "townhouse",
+      "top_score": 0.6873,
+      "latency_ms": 2043.196439743042,
+      "has_relevant": true
+    },
+    {
+      "query_id": "A12",
+      "query": "What is the ceiling height in the Townhouse units at 222 Rajpur?",
+      "section": "222 Rajpur, Dehradun",
+      "category": "townhouse",
+      "top_score": 0.6491,
+      "latency_ms": 2367.1023845672607,
+      "has_relevant": true
+    },
+    {
+      "query_id": "A13",
+      "query": "How many parking spaces are provided with each Townhouse at 222 Rajpur?",
+      "section": "222 Rajpur, Dehradun",
+      "category": "townhouse",
+      "top_score": 0.5794,
+      "latency_ms": 2066.0300254821777,
+      "has_relevant": true
+    },
+    {
+      "query_id": "A14",
+      "query": "How many Courtyard Villas are available at 222 Rajpur?",
+      "section": "222 Rajpur, Dehradun",
+      "category": "courtyard_villas",
+      "top_score": 0.6976,
+      "latency_ms": 2059.2541694641113,
+      "has_relevant": true
+    },
+    {
+      "query_id": "A15",
+      "query": "What is the plot size range for Courtyard Villas at 222 Rajpur?",
+      "section": "222 Rajpur, Dehradun",
+      "category": "courtyard_villas",
+      "top_score": 0.7522,
+      "latency_ms": 2053.584098815918,
+      "has_relevant": true
+    },
+    {
+      "query_id": "A16",
+      "query": "Do the Courtyard Villas at 222 Rajpur include staff accommodation?",
+      "section": "222 Rajpur, Dehradun",
+      "category": "courtyard_villas",
+      "top_score": 0.63,
+      "latency_ms": 3120.2330589294434,
+      "has_relevant": true
+    },
+    {
+      "query_id": "A17",
+      "query": "What is the terrace size of a Courtyard Villa at 222 Rajpur?",
+      "section": "222 Rajpur, Dehradun",
+      "category": "courtyard_villas",
+      "top_score": 0.7095,
+      "latency_ms": 2192.9147243499756,
+      "has_relevant": true
+    },
+    {
+      "query_id": "A18",
+      "query": "How many Forest Villas are available at 222 Rajpur?",
+      "section": "222 Rajpur, Dehradun",
+      "category": "forest_villas",
+      "top_score": 0.7029,
+      "latency_ms": 2185.368299484253,
+      "has_relevant": true
+    },
+    {
+      "query_id": "A19",
+      "query": "What is the built-up area of a Forest Villa at 222 Rajpur?",
+      "section": "222 Rajpur, Dehradun",
+      "category": "forest_villas",
+      "top_score": 0.6934,
+      "latency_ms": 2156.6500663757324,
+      "has_relevant": true
+    },
+    {
+      "query_id": "A20",
+      "query": "Do Forest Villas at 222 Rajpur have private elevators?",
+      "section": "222 Rajpur, Dehradun",
+      "category": "forest_villas",
+      "top_score": 0.6001,
+      "latency_ms": 2626.892328262329,
+      "has_relevant": true
+    },
+    {
+      "query_id": "A21",
+      "query": "What special landscape feature is included in the lower ground floor of Forest Villas at 222 Rajpur?",
+      "section": "222 Rajpur, Dehradun",
+      "category": "forest_villas",
+      "top_score": 0.7326,
+      "latency_ms": 2170.3550815582275,
+      "has_relevant": true
+    },
+    {
+      "query_id": "A22",
+      "query": "Does 222 Rajpur provide round-the-clock security?",
+      "section": "222 Rajpur, Dehradun",
+      "category": "amenities",
+      "top_score": 0.5654,
+      "latency_ms": 2043.7183380126953,
+      "has_relevant": true
+    },
+    {
+      "query_id": "A23",
+      "query": "What wellness or nature-focused amenities are offered at 222 Rajpur?",
+      "section": "222 Rajpur, Dehradun",
+      "category": "amenities",
+      "top_score": 0.6747,
+      "latency_ms": 2272.62282371521,
+      "has_relevant": true
+    },
+    {
+      "query_id": "A24",
+      "query": "Does 222 Rajpur offer power backup and uninterrupted water supply?",
+      "section": "222 Rajpur, Dehradun",
+      "category": "amenities",
+      "top_score": 0.4558,
+      "latency_ms": 2070.167064666748,
+      "has_relevant": false
+    },
+    {
+      "query_id": "A25",
+      "query": "Is there a private orchard at 222 Rajpur?",
+      "section": "222 Rajpur, Dehradun",
+      "category": "amenities",
+      "top_score": 0.6339,
+      "latency_ms": 2052.2449016571045,
+      "has_relevant": true
+    },
+    {
+      "query_id": "B1",
+      "query": "What is the total super built-up area of Max Towers, Noida?",
+      "section": "Max Towers, Noida",
+      "category": "overview",
+      "top_score": 0.708,
+      "latency_ms": 2029.1664600372314,
+      "has_relevant": true
+    },
+    {
+      "query_id": "B2",
+      "query": "How many office floors and amenity floors are there in Max Towers?",
+      "section": "Max Towers, Noida",
+      "category": "overview",
+      "top_score": 0.7326,
+      "latency_ms": 2033.623456954956,
+      "has_relevant": true
+    },
+    {
+      "query_id": "B3",
+      "query": "What is the typical floor plate size at Max Towers?",
+      "section": "Max Towers, Noida",
+      "category": "overview",
+      "top_score": 0.684,
+      "latency_ms": 2046.3972091674805,
+      "has_relevant": true
+    },
+    {
+      "query_id": "B4",
+      "query": "What is the floor-to-floor height at Max Towers?",
+      "section": "Max Towers, Noida",
+      "category": "overview",
+      "top_score": 0.7272,
+      "latency_ms": 2042.1104431152344,
+      "has_relevant": true
+    },
+    {
+      "query_id": "B5",
+      "query": "What green rating has Max Towers achieved?",
+      "section": "Max Towers, Noida",
+      "category": "sustainability",
+      "top_score": 0.6596,
+      "latency_ms": 2049.97181892395,
+      "has_relevant": true
+    },
+    {
+      "query_id": "B6",
+      "query": "Does Max Towers offer on-site wastewater treatment?",
+      "section": "Max Towers, Noida",
+      "category": "sustainability",
+      "top_score": 0.5864,
+      "latency_ms": 2044.4729328155518,
+      "has_relevant": true
+    },
+    {
+      "query_id": "B7",
+      "query": "What is the coefficient of performance (COP) of the chiller system at Max Towers?",
+      "section": "Max Towers, Noida",
+      "category": "sustainability",
+      "top_score": 0.5401,
+      "latency_ms": 2043.9238548278809,
+      "has_relevant": true
+    },
+    {
+      "query_id": "B8",
+      "query": "Does Max Towers support electric vehicle parking?",
+      "section": "Max Towers, Noida",
+      "category": "sustainability",
+      "top_score": 0.5319,
+      "latency_ms": 2042.025089263916,
+      "has_relevant": true
+    },
+    {
+      "query_id": "B9",
+      "query": "Does Max Towers have a swimming pool?",
+      "section": "Max Towers, Noida",
+      "category": "wellness",
+      "top_score": 0.5068,
+      "latency_ms": 2034.48486328125,
+      "has_relevant": true
+    },
+    {
+      "query_id": "B10",
+      "query": "What kind of fitness facilities are available at Max Towers?",
+      "section": "Max Towers, Noida",
+      "category": "wellness",
+      "top_score": 0.6476,
+      "latency_ms": 2041.2914752960205,
+      "has_relevant": true
+    },
+    {
+      "query_id": "B11",
+      "query": "Does Max Towers provide daycare facilities?",
+      "section": "Max Towers, Noida",
+      "category": "wellness",
+      "top_score": 0.5884,
+      "latency_ms": 2040.708303451538,
+      "has_relevant": true
+    },
+    {
+      "query_id": "B12",
+      "query": "What air treatment system is used in Max Towers?",
+      "section": "Max Towers, Noida",
+      "category": "wellness",
+      "top_score": 0.6501,
+      "latency_ms": 2038.282871246338,
+      "has_relevant": true
+    },
+    {
+      "query_id": "B13",
+      "query": "Where is Max Towers located?",
+      "section": "Max Towers, Noida",
+      "category": "location",
+      "top_score": 0.7056,
+      "latency_ms": 2054.7797679901123,
+      "has_relevant": true
+    },
+    {
+      "query_id": "B14",
+      "query": "Is Max Towers within walking distance of a metro station?",
+      "section": "Max Towers, Noida",
+      "category": "location",
+      "top_score": 0.6994,
+      "latency_ms": 2043.4014797210693,
+      "has_relevant": true
+    },
+    {
+      "query_id": "B15",
+      "query": "Does Max Towers have direct access to the DND Flyway?",
+      "section": "Max Towers, Noida",
+      "category": "location",
+      "top_score": 0.5952,
+      "latency_ms": 2026.4456272125244,
+      "has_relevant": true
+    },
+    {
+      "query_id": "B16",
+      "query": "What type of fa\u00c3\u00a7ade glass is used in Max Towers?",
+      "section": "Max Towers, Noida",
+      "category": "design",
+      "top_score": 0.5811,
+      "latency_ms": 2037.196159362793,
+      "has_relevant": true
+    },
+    {
+      "query_id": "B17",
+      "query": "What is the solar heat gain coefficient of the fa\u00c3\u00a7ade at Max Towers?",
+      "section": "Max Towers, Noida",
+      "category": "design",
+      "top_score": 0.5228,
+      "latency_ms": 2042.3109531402588,
+      "has_relevant": true
+    },
+    {
+      "query_id": "B18",
+      "query": "What percentage of regular occupied space at Max Towers gets line-of-sight to the outside?",
+      "section": "Max Towers, Noida",
+      "category": "design",
+      "top_score": 0.6299,
+      "latency_ms": 2067.0573711395264,
+      "has_relevant": true
+    },
+    {
+      "query_id": "C1",
+      "query": "What is the total super built-up area of Max House, Okhla?",
+      "section": "Max House, Okhla",
+      "category": "overview",
+      "top_score": 0.6329,
+      "latency_ms": 2068.953514099121,
+      "has_relevant": true
+    },
+    {
+      "query_id": "C2",
+      "query": "How many tenant floors are there in Max House?",
+      "section": "Max House, Okhla",
+      "category": "overview",
+      "top_score": 0.6856,
+      "latency_ms": 2055.0076961517334,
+      "has_relevant": true
+    },
+    {
+      "query_id": "C3",
+      "query": "What is the typical floor plate size at Max House?",
+      "section": "Max House, Okhla",
+      "category": "overview",
+      "top_score": 0.5704,
+      "latency_ms": 2027.714729309082,
+      "has_relevant": true
+    },
+    {
+      "query_id": "C4",
+      "query": "What is the green rating of Max House?",
+      "section": "Max House, Okhla",
+      "category": "overview",
+      "top_score": 0.6825,
+      "latency_ms": 2050.300121307373,
+      "has_relevant": true
+    },
+    {
+      "query_id": "C5",
+      "query": "How far is Max House, Okhla from the Okhla NSIC Metro Station?",
+      "section": "Max House, Okhla",
+      "category": "location",
+      "top_score": 0.5184,
+      "latency_ms": 2042.565107345581,
+      "has_relevant": true
+    },
+    {
+      "query_id": "C6",
+      "query": "How far is Max House from IGI Airport?",
+      "section": "Max House, Okhla",
+      "category": "location",
+      "top_score": 0.5541,
+      "latency_ms": 2025.4924297332764,
+      "has_relevant": true
+    },
+    {
+      "query_id": "C7",
+      "query": "Is Max House within walking distance of a metro station?",
+      "section": "Max House, Okhla",
+      "category": "location",
+      "top_score": 0.5462,
+      "latency_ms": 2023.1361389160156,
+      "has_relevant": true
+    },
+    {
+      "query_id": "C8",
+      "query": "What fa\u00c3\u00a7ade material is used in Max House?",
+      "section": "Max House, Okhla",
+      "category": "design",
+      "top_score": 0.7052,
+      "latency_ms": 2055.835485458374,
+      "has_relevant": true
+    },
+    {
+      "query_id": "C9",
+      "query": "What is the floor-to-ceiling height at Max House?",
+      "section": "Max House, Okhla",
+      "category": "design",
+      "top_score": 0.6393,
+      "latency_ms": 2034.9786281585693,
+      "has_relevant": true
+    },
+    {
+      "query_id": "C10",
+      "query": "Does Max House use double-glazed windows?",
+      "section": "Max House, Okhla",
+      "category": "design",
+      "top_score": 0.5389,
+      "latency_ms": 2041.5384769439697,
+      "has_relevant": true
+    },
+    {
+      "query_id": "C11",
+      "query": "What air treatment technology is used in Max House?",
+      "section": "Max House, Okhla",
+      "category": "sustainability",
+      "top_score": 0.5386,
+      "latency_ms": 2019.773006439209,
+      "has_relevant": true
+    },
+    {
+      "query_id": "C12",
+      "query": "Is Max House LEED certified?",
+      "section": "Max House, Okhla",
+      "category": "sustainability",
+      "top_score": 0.8018,
+      "latency_ms": 2034.9760055541992,
+      "has_relevant": true
+    },
+    {
+      "query_id": "C13",
+      "query": "Does Max House incorporate biophilic design principles?",
+      "section": "Max House, Okhla",
+      "category": "design",
+      "top_score": 0.644,
+      "latency_ms": 2039.2146110534668,
+      "has_relevant": true
+    },
+    {
+      "query_id": "D1",
+      "query": "Which property among 222 Rajpur, Max Towers, and Max House is purely residential?",
+      "section": "Cross-Property Comparison",
+      "category": "comparison",
+      "top_score": 0.7636,
+      "latency_ms": 2041.5644645690918,
+      "has_relevant": true
+    },
+    {
+      "query_id": "D2",
+      "query": "Which property is located in Dehradun: 222 Rajpur or Max Towers?",
+      "section": "Cross-Property Comparison",
+      "category": "comparison",
+      "top_score": 0.843,
+      "latency_ms": 2064.8982524871826,
+      "has_relevant": true
+    },
+    {
+      "query_id": "D3",
+      "query": "Between Max Towers and Max House, which one has a higher LEED certification?",
+      "section": "Cross-Property Comparison",
+      "category": "comparison",
+      "top_score": 0.7048,
+      "latency_ms": 2671.8640327453613,
+      "has_relevant": true
+    },
+    {
+      "query_id": "D4",
+      "query": "Compare the typical floor plate size of Max Towers and Max House.",
+      "section": "Cross-Property Comparison",
+      "category": "comparison",
+      "top_score": 0.641,
+      "latency_ms": 2405.851364135742,
+      "has_relevant": true
+    },
+    {
+      "query_id": "D5",
+      "query": "Which property has a larger total built-up area: Max Towers or Max House?",
+      "section": "Cross-Property Comparison",
+      "category": "comparison",
+      "top_score": 0.5589,
+      "latency_ms": 2048.3765602111816,
+      "has_relevant": true
+    },
+    {
+      "query_id": "D6",
+      "query": "Which property has more tenant floors: Max Towers or Max House?",
+      "section": "Cross-Property Comparison",
+      "category": "comparison",
+      "top_score": 0.6441,
+      "latency_ms": 2059.0434074401855,
+      "has_relevant": true
+    },
+    {
+      "query_id": "D7",
+      "query": "Which property is closer to a metro station: Max House or Max Towers?",
+      "section": "Cross-Property Comparison",
+      "category": "comparison",
+      "top_score": 0.6173,
+      "latency_ms": 2057.0592880249023,
+      "has_relevant": true
+    },
+    {
+      "query_id": "D8",
+      "query": "Between 222 Rajpur and Max House, which property is closer to an airport?",
+      "section": "Cross-Property Comparison",
+      "category": "comparison",
+      "top_score": 0.6958,
+      "latency_ms": 2036.2107753753662,
+      "has_relevant": true
+    },
+    {
+      "query_id": "D9",
+      "query": "Which property offers direct access to the DND Flyway: Max Towers or Max House?",
+      "section": "Cross-Property Comparison",
+      "category": "comparison",
+      "top_score": 0.6529,
+      "latency_ms": 2037.6760959625244,
+      "has_relevant": true
+    },
+    {
+      "query_id": "D10",
+      "query": "Which property has LEED Platinum certification: Max Towers or Max House?",
+      "section": "Cross-Property Comparison",
+      "category": "comparison",
+      "top_score": 0.7517,
+      "latency_ms": 2144.102096557617,
+      "has_relevant": true
+    },
+    {
+      "query_id": "D11",
+      "query": "Which properties use advanced air treatment systems: Max Towers, Max House, or both?",
+      "section": "Cross-Property Comparison",
+      "category": "comparison",
+      "top_score": 0.6378,
+      "latency_ms": 3297.0595359802246,
+      "has_relevant": true
+    },
+    {
+      "query_id": "D12",
+      "query": "Which property offers on-site wastewater treatment: Max Towers or Max House?",
+      "section": "Cross-Property Comparison",
+      "category": "comparison",
+      "top_score": 0.6381,
+      "latency_ms": 2156.8996906280518,
+      "has_relevant": true
+    },
+    {
+      "query_id": "D13",
+      "query": "Which property offers a swimming pool: Max Towers or Max House?",
+      "section": "Cross-Property Comparison",
+      "category": "comparison",
+      "top_score": 0.5457,
+      "latency_ms": 2089.047431945801,
+      "has_relevant": true
+    },
+    {
+      "query_id": "D14",
+      "query": "Does 222 Rajpur offer wellness amenities comparable to Max Towers?",
+      "section": "Cross-Property Comparison",
+      "category": "comparison",
+      "top_score": 0.6219,
+      "latency_ms": 2038.081169128418,
+      "has_relevant": true
+    },
+    {
+      "query_id": "D15",
+      "query": "Which property explicitly mentions decompression spaces: Max Towers or Max House?",
+      "section": "Cross-Property Comparison",
+      "category": "comparison",
+      "top_score": 0.521,
+      "latency_ms": 2040.2207374572754,
+      "has_relevant": true
+    },
+    {
+      "query_id": "E1",
+      "query": "I'm looking for a 4-bedroom villa with staff accommodation in 222 Rajpur \u00e2\u20ac\u201d which unit type should I consider?",
+      "section": "Real-World Client Simulation",
+      "category": "client",
+      "top_score": 0.6578,
+      "latency_ms": 2067.561149597168,
+      "has_relevant": true
+    },
+    {
+      "query_id": "E2",
+      "query": "My company needs a 25,000 sq. ft. office in Noida \u00e2\u20ac\u201d can Max Towers accommodate this on a single floor?",
+      "section": "Real-World Client Simulation",
+      "category": "client",
+      "top_score": 0.6771,
+      "latency_ms": 2026.2398719787598,
+      "has_relevant": true
+    },
+    {
+      "query_id": "E3",
+      "query": "We want an office in Delhi with LEED Gold certification \u00e2\u20ac\u201d is Max House, Okhla suitable?",
+      "section": "Real-World Client Simulation",
+      "category": "client",
+      "top_score": 0.6819,
+      "latency_ms": 2055.814027786255,
+      "has_relevant": true
+    },
+    {
+      "query_id": "E4",
+      "query": "I want a residential property near the forest with private garden space \u00e2\u20ac\u201d does 222 Rajpur offer this?",
+      "section": "Real-World Client Simulation",
+      "category": "client",
+      "top_score": 0.7343,
+      "latency_ms": 2170.146703720093,
+      "has_relevant": true
+    },
+    {
+      "query_id": "E5",
+      "query": "We are a wellness-focused company \u00e2\u20ac\u201d between Max Towers and Max House, which better supports employee wellbeing?",
+      "section": "Real-World Client Simulation",
+      "category": "client",
+      "top_score": 0.6892,
+      "latency_ms": 2113.7800216674805,
+      "has_relevant": true
+    },
+    {
+      "query_id": "E6",
+      "query": "I need an office within walking distance of the metro in Delhi \u00e2\u20ac\u201d is Max House a good option?",
+      "section": "Real-World Client Simulation",
+      "category": "client",
+      "top_score": 0.7,
+      "latency_ms": 2076.0974884033203,
+      "has_relevant": true
+    },
+    {
+      "query_id": "E7",
+      "query": "Which property among 222 Rajpur, Max Towers, and Max House offers private elevators?",
+      "section": "Real-World Client Simulation",
+      "category": "client",
+      "top_score": 0.7045,
+      "latency_ms": 2074.159860610962,
+      "has_relevant": true
+    },
+    {
+      "query_id": "E8",
+      "query": "If sustainability is a top priority, should I choose Max Towers or Max House?",
+      "section": "Real-World Client Simulation",
+      "category": "client",
+      "top_score": 0.6178,
+      "latency_ms": 2024.6272087097168,
+      "has_relevant": true
+    },
+    {
+      "query_id": "E9",
+      "query": "I need a property with daycare facilities \u00e2\u20ac\u201d which of these three properties provides that?",
+      "section": "Real-World Client Simulation",
+      "category": "client",
+      "top_score": 0.5693,
+      "latency_ms": 2042.9601669311523,
+      "has_relevant": true
+    },
+    {
+      "query_id": "F1",
+      "query": "Which of the three developments is a housing project rather than an office building?",
+      "section": "Paraphrase Robustness",
+      "category": "paraphrase",
+      "top_score": 0.6158,
+      "latency_ms": 2041.2571430206299,
+      "has_relevant": true
+    },
+    {
+      "query_id": "F2",
+      "query": "Identify the project that is not meant for commercial office use.",
+      "section": "Paraphrase Robustness",
+      "category": "paraphrase",
+      "top_score": 0.5269,
+      "latency_ms": 2043.0591106414795,
+      "has_relevant": true
+    },
+    {
+      "query_id": "F3",
+      "query": "Among the three properties, which one is exclusively residential in nature?",
+      "section": "Paraphrase Robustness",
+      "category": "paraphrase",
+      "top_score": 0.5616,
+      "latency_ms": 2051.5851974487305,
+      "has_relevant": true
+    },
+    {
+      "query_id": "F4",
+      "query": "Between Max Towers and Max House, which holds the higher level of LEED certification?",
+      "section": "Paraphrase Robustness",
+      "category": "paraphrase",
+      "top_score": 0.7008,
+      "latency_ms": 2035.2864265441895,
+      "has_relevant": true
+    },
+    {
+      "query_id": "F5",
+      "query": "If sustainability certification level is the deciding factor, which property ranks highest?",
+      "section": "Paraphrase Robustness",
+      "category": "paraphrase",
+      "top_score": 0.5357,
+      "latency_ms": 2034.3892574310303,
+      "has_relevant": true
+    },
+    {
+      "query_id": "F6",
+      "query": "Which development has achieved Platinum-level green certification?",
+      "section": "Paraphrase Robustness",
+      "category": "paraphrase",
+      "top_score": 0.4669,
+      "latency_ms": 2060.364007949829,
+      "has_relevant": false
+    },
+    {
+      "query_id": "F7",
+      "query": "Which office property can employees walk to from a metro station?",
+      "section": "Paraphrase Robustness",
+      "category": "paraphrase",
+      "top_score": 0.4787,
+      "latency_ms": 2065.498113632202,
+      "has_relevant": false
+    },
+    {
+      "query_id": "F8",
+      "query": "Identify the development located within walking distance of a metro stop.",
+      "section": "Paraphrase Robustness",
+      "category": "paraphrase",
+      "top_score": 0.6225,
+      "latency_ms": 2082.1728706359863,
+      "has_relevant": true
+    },
+    {
+      "query_id": "F9",
+      "query": "Between the Noida and Okhla projects, which one offers closer metro access?",
+      "section": "Paraphrase Robustness",
+      "category": "paraphrase",
+      "top_score": 0.4833,
+      "latency_ms": 2040.0328636169434,
+      "has_relevant": false
+    },
+    {
+      "query_id": "F10",
+      "query": "Which project is larger in overall constructed area: Max Towers or Max House?",
+      "section": "Paraphrase Robustness",
+      "category": "paraphrase",
+      "top_score": 0.5901,
+      "latency_ms": 2038.374900817871,
+      "has_relevant": true
+    },
+    {
+      "query_id": "F11",
+      "query": "Between the Delhi and Noida office developments, which spans more total square footage?",
+      "section": "Paraphrase Robustness",
+      "category": "paraphrase",
+      "top_score": 0.6167,
+      "latency_ms": 2029.9360752105713,
+      "has_relevant": true
+    },
+    {
+      "query_id": "F12",
+      "query": "Which property has the greater overall scale in terms of built-up space?",
+      "section": "Paraphrase Robustness",
+      "category": "paraphrase",
+      "top_score": 0.4003,
+      "latency_ms": 2037.8422737121582,
+      "has_relevant": false
+    },
+    {
+      "query_id": "F13",
+      "query": "Which property includes an indoor swimming facility?",
+      "section": "Paraphrase Robustness",
+      "category": "paraphrase",
+      "top_score": 0.6081,
+      "latency_ms": 2036.7400646209717,
+      "has_relevant": true
+    },
+    {
+      "query_id": "F14",
+      "query": "Identify the development that provides decompression or relaxation spaces.",
+      "section": "Paraphrase Robustness",
+      "category": "paraphrase",
+      "top_score": 0.7293,
+      "latency_ms": 2033.1225395202637,
+      "has_relevant": true
+    },
+    {
+      "query_id": "F15",
+      "query": "If employee wellness is a priority, which property explicitly supports it through facilities?",
+      "section": "Paraphrase Robustness",
+      "category": "paraphrase",
+      "top_score": 0.7018,
+      "latency_ms": 2050.7514476776123,
+      "has_relevant": true
+    },
+    {
+      "query_id": "G1",
+      "query": "Which property among the three includes a helipad?",
+      "section": "Negative/Adversarial Questions",
+      "category": "negative",
+      "top_score": 0.3516,
+      "latency_ms": 2047.5738048553467,
+      "has_relevant": false
+    },
+    {
+      "query_id": "G2",
+      "query": "Which development offers a golf course within the premises?",
+      "section": "Negative/Adversarial Questions",
+      "category": "negative",
+      "top_score": 0.5089,
+      "latency_ms": 2072.3841190338135,
+      "has_relevant": true
+    },
+    {
+      "query_id": "G3",
+      "query": "Is any of the properties located in Mumbai?",
+      "section": "Negative/Adversarial Questions",
+      "category": "negative",
+      "top_score": 0.6087,
+      "latency_ms": 2032.0730209350586,
+      "has_relevant": true
+    },
+    {
+      "query_id": "G4",
+      "query": "Which project provides co-living or serviced apartments?",
+      "section": "Negative/Adversarial Questions",
+      "category": "negative",
+      "top_score": 0.5545,
+      "latency_ms": 2277.846574783325,
+      "has_relevant": true
+    },
+    {
+      "query_id": "G5",
+      "query": "What is the rental yield percentage of Max Towers?",
+      "section": "Negative/Adversarial Questions",
+      "category": "negative",
+      "top_score": 0.5778,
+      "latency_ms": 2051.1577129364014,
+      "has_relevant": true
+    },
+    {
+      "query_id": "G6",
+      "query": "Which property has a shopping mall attached to it?",
+      "section": "Negative/Adversarial Questions",
+      "category": "negative",
+      "top_score": 0.5322,
+      "latency_ms": 2034.735918045044,
+      "has_relevant": true
+    },
+    {
+      "query_id": "G7",
+      "query": "Do any of the properties include a five-star hotel?",
+      "section": "Negative/Adversarial Questions",
+      "category": "negative",
+      "top_score": 0.5763,
+      "latency_ms": 2051.729917526245,
+      "has_relevant": true
+    },
+    {
+      "query_id": "G8",
+      "query": "Which development offers beachfront views?",
+      "section": "Negative/Adversarial Questions",
+      "category": "negative",
+      "top_score": 0.5453,
+      "latency_ms": 2035.5165004730225,
+      "has_relevant": true
+    },
+    {
+      "query_id": "G9",
+      "query": "Is there a data center facility mentioned in any of the properties?",
+      "section": "Negative/Adversarial Questions",
+      "category": "negative",
+      "top_score": 0.4812,
+      "latency_ms": 2043.0402755737305,
+      "has_relevant": false
+    },
+    {
+      "query_id": "G10",
+      "query": "Which property includes an amusement park or entertainment zone?",
+      "section": "Negative/Adversarial Questions",
+      "category": "negative",
+      "top_score": 0.5529,
+      "latency_ms": 2026.5891551971436,
+      "has_relevant": true
+    },
+    {
+      "query_id": "H1",
+      "query": "What is the total area?",
+      "section": "Ambiguous/Clarification Test",
+      "category": "ambiguous",
+      "top_score": 0.4298,
+      "latency_ms": 2044.978141784668,
+      "has_relevant": false
+    },
+    {
+      "query_id": "H2",
+      "query": "How many floors does it have?",
+      "section": "Ambiguous/Clarification Test",
+      "category": "ambiguous",
+      "top_score": 0.5866,
+      "latency_ms": 2044.2123413085938,
+      "has_relevant": true
+    },
+    {
+      "query_id": "H3",
+      "query": "What certification does it hold?",
+      "section": "Ambiguous/Clarification Test",
+      "category": "ambiguous",
+      "top_score": 0.3644,
+      "latency_ms": 2023.071050643921,
+      "has_relevant": false
+    },
+    {
+      "query_id": "H4",
+      "query": "How far is it from the airport?",
+      "section": "Ambiguous/Clarification Test",
+      "category": "ambiguous",
+      "top_score": 0.4638,
+      "latency_ms": 2044.9166297912598,
+      "has_relevant": false
+    },
+    {
+      "query_id": "H5",
+      "query": "Does it offer parking?",
+      "section": "Ambiguous/Clarification Test",
+      "category": "ambiguous",
+      "top_score": 0.3631,
+      "latency_ms": 2178.576946258545,
+      "has_relevant": false
+    }
+  ]
+}

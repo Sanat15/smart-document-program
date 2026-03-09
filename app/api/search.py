@@ -49,7 +49,8 @@ async def search_documents(request: SearchRequest):
     
     query = request.query.strip()
     top_k = request.top_k
-    threshold = request.score_threshold or settings.similarity_threshold
+    # Fix: Use 'is not None' to allow 0.0 as a valid threshold
+    threshold = request.score_threshold if request.score_threshold is not None else settings.similarity_threshold
     
     if not query:
         raise HTTPException(

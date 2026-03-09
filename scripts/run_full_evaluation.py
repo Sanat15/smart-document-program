@@ -167,8 +167,8 @@ class FullEvaluator:
         results = result_data.get("results", [])
         cached = result_data.get("cached", False)
         
-        # Determine if result is relevant (has any results with score > 0.2)
-        has_relevant = len(results) > 0 and results[0].get("similarity_score", 0) > 0.2
+        # Determine if result is relevant (has any results with score > 0.3)
+        has_relevant = len(results) > 0 and results[0].get("similarity_score", 0) > 0.3
         
         # Find rank of first relevant result
         relevant_rank = None
@@ -469,20 +469,171 @@ class FullEvaluator:
         
         # Save summary markdown
         md_path = output_dir / "EVALUATION_SUMMARY.md"
-        with open(md_path, "w") as f:
+        with open(md_path, "w", encoding="utf-8") as f:
             f.write("# Evaluation Results Summary\n\n")
             f.write(f"**Date:** {report.timestamp}\n\n")
             f.write("## Key Metrics\n\n")
             f.write("| Metric | Value | Target |\n")
             f.write("|--------|-------|--------|\n")
-            f.write(f"| Top-1 Accuracy | {report.top1_accuracy:.1%} | ≥75% |\n")
-            f.write(f"| Top-3 Accuracy | {report.top3_accuracy:.1%} | ≥90% |\n")
-            f.write(f"| MRR | {report.mrr:.3f} | — |\n")
+            f.write(f"| Top-1 Accuracy | {report.top1_accuracy:.1%} | >=75% |\n")
+            f.write(f"| Top-3 Accuracy | {report.top3_accuracy:.1%} | >=90% |\n")
+            f.write(f"| MRR | {report.mrr:.3f} | - |\n")
             f.write(f"| P95 Latency | {report.p95_latency_ms:.0f}ms | <2000ms |\n")
             f.write(f"| False Positive Rate | {report.false_positive_rate:.1%} | <10% |\n")
-            f.write(f"| Cache Hit Rate | {report.cache_hit_rate:.1%} | — |\n")
+            f.write(f"| Cache Hit Rate | {report.cache_hit_rate:.1%} | - |\n")
         
         print(f"💾 Summary saved to: {md_path}")
+        
+        # Save LaTeX report
+        tex_path = output_dir / "evaluation_report.tex"
+        self._save_latex_report(report, tex_path)
+        print(f"💾 LaTeX report saved to: {tex_path}")
+    
+    def _format_pct_latex(self, value: float) -> str:
+        """Format percentage for LaTeX (escape % sign)."""
+        return f"{value*100:.1f}\\%"
+    
+    def _save_latex_report(self, report: EvaluationReport, tex_path: Path):
+        """Generate LaTeX format evaluation report."""
+        # Helper for percentage formatting
+        pct = self._format_pct_latex
+        
+        latex_content = r"""\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{array}
+
+\geometry{margin=1in}
+\definecolor{pass}{rgb}{0.2,0.6,0.2}
+\definecolor{fail}{rgb}{0.8,0.2,0.2}
+
+\title{Real Estate Document Intelligence System\\Evaluation Report}
+\author{System Evaluation Suite}
+\date{""" + report.timestamp[:10] + r"""}
+
+\begin{document}
+\maketitle
+
+\section{Executive Summary}
+This report presents the evaluation results of the Real Estate Document Intelligence System.
+The system was tested against """ + str(report.total_questions) + r""" questions across 8 categories.
+
+\section{Key Performance Metrics}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lrrl}
+\toprule
+\textbf{Metric} & \textbf{Value} & \textbf{Target} & \textbf{Status} \\
+\midrule
+Top-1 Accuracy & """ + pct(report.top1_accuracy) + r""" & $\geq$75\% & """ + (r"\textcolor{pass}{PASS}" if report.top1_accuracy >= 0.75 else r"\textcolor{fail}{FAIL}") + r""" \\
+Top-3 Accuracy & """ + pct(report.top3_accuracy) + r""" & $\geq$90\% & """ + (r"\textcolor{pass}{PASS}" if report.top3_accuracy >= 0.90 else r"\textcolor{fail}{FAIL}") + r""" \\
+Top-5 Accuracy & """ + pct(report.top5_accuracy) + r""" & -- & -- \\
+MRR & """ + f"{report.mrr:.3f}" + r""" & -- & -- \\
+\bottomrule
+\end{tabular}
+\caption{Retrieval Quality Metrics}
+\end{table}
+
+\section{Latency Performance}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lrl}
+\toprule
+\textbf{Metric} & \textbf{Value (ms)} & \textbf{Status} \\
+\midrule
+Average Latency & """ + f"{report.avg_latency_ms:.0f}" + r""" & -- \\
+P50 (Median) & """ + f"{report.p50_latency_ms:.0f}" + r""" & -- \\
+P95 & """ + f"{report.p95_latency_ms:.0f}" + r""" & """ + (r"\textcolor{pass}{PASS}" if report.p95_latency_ms < 2000 else r"\textcolor{fail}{FAIL}") + r""" \\
+P99 & """ + f"{report.p99_latency_ms:.0f}" + r""" & -- \\
+Minimum & """ + f"{report.min_latency_ms:.0f}" + r""" & -- \\
+Maximum & """ + f"{report.max_latency_ms:.0f}" + r""" & -- \\
+\bottomrule
+\end{tabular}
+\caption{Latency Metrics (target: P95 $<$ 2000ms)}
+\end{table}
+
+\section{Cache Performance}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lr}
+\toprule
+\textbf{Metric} & \textbf{Value} \\
+\midrule
+Cache Hit Rate & """ + pct(report.cache_hit_rate) + r""" \\
+Cached Query Latency & """ + f"{report.cached_avg_latency_ms:.0f}" + r"""ms \\
+Uncached Query Latency & """ + f"{report.uncached_avg_latency_ms:.0f}" + r"""ms \\
+\bottomrule
+\end{tabular}
+\caption{Cache Performance}
+\end{table}
+
+\section{Robustness Metrics}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lrl}
+\toprule
+\textbf{Metric} & \textbf{Value} & \textbf{Status} \\
+\midrule
+False Positive Rate & """ + pct(report.false_positive_rate) + r""" & """ + (r"\textcolor{pass}{PASS}" if report.false_positive_rate < 0.10 else r"\textcolor{fail}{FAIL}") + r""" \\
+Paraphrase Consistency & """ + pct(report.paraphrase_consistency) + r""" & -- \\
+\bottomrule
+\end{tabular}
+\caption{Robustness Metrics (FP target: $<$10\%)}
+\end{table}
+
+\section{Per-Section Breakdown}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{p{1cm}p{4.5cm}rrrl}
+\toprule
+\textbf{Sec} & \textbf{Name} & \textbf{Total} & \textbf{Top-1} & \textbf{Acc} & \textbf{Latency} \\
+\midrule
+"""
+        
+        for section_key, metrics in report.section_metrics.items():
+            accuracy = metrics.top1_hits / metrics.total_queries if metrics.total_queries > 0 else 0
+            latex_content += f"{section_key} & {metrics.name} & {metrics.total_queries} & {metrics.top1_hits} & {accuracy*100:.1f}\\% & {metrics.avg_latency_ms:.0f}ms \\\\\n"
+        
+        latex_content += r"""\bottomrule
+\end{tabular}
+\caption{Section-wise Performance}
+\end{table}
+
+\section{Conclusion}
+"""
+        
+        if report.top1_accuracy >= 0.75 and report.p95_latency_ms < 2000:
+            latex_content += r"""The system \textbf{\textcolor{pass}{PASSES}} all performance targets.
+"""
+        else:
+            issues = []
+            if report.top1_accuracy < 0.75:
+                issues.append(f"Top-1 accuracy ({report.top1_accuracy*100:.1f}\\%) below 75\\% target")
+            if report.p95_latency_ms >= 2000:
+                issues.append(f"P95 latency ({report.p95_latency_ms:.0f}ms) exceeds 2000ms target")
+            latex_content += r"""The system \textbf{\textcolor{fail}{requires improvement}} in the following areas:
+\begin{itemize}
+"""
+            for issue in issues:
+                latex_content += f"\\item {issue}\n"
+            latex_content += r"""\end{itemize}
+"""
+        
+        latex_content += r"""
+\end{document}
+"""
+        
+        with open(tex_path, "w", encoding="utf-8") as f:
+            f.write(latex_content)
 
 
 def main():

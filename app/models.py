@@ -11,7 +11,7 @@ class SearchRequest(BaseModel):
     """Request model for document search."""
     query: str = Field(..., min_length=1, max_length=1000, description="Search query text")
     top_k: int = Field(default=5, ge=1, le=20, description="Number of results to return")
-    score_threshold: Optional[float] = Field(default=0.7, ge=0, le=1, description="Minimum similarity score")
+    score_threshold: Optional[float] = Field(default=0.5, ge=0, le=1, description="Minimum similarity score")
     use_reranking: bool = Field(default=False, description="Enable cross-encoder re-ranking for improved accuracy")
 
 
